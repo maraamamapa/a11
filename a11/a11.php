@@ -1,8 +1,8 @@
 <?php
 class jugadorDado{
 
-private $minNumDado;
-private $maxNumDado;
+private $minNumDado=0;
+private $maxNumDado=12;
 public $tirarDado;
 
 /*Establecemos los setters y los getters de $minNumDado y de $maxNumDado */
@@ -36,8 +36,8 @@ public function setMinNumDado($minNumDado){ /* El numero obtenido no puede ser m
 /*Funcion para que una vez se tire el dado, el numero obtenido al azar, sea entre 0-12 , para ello utilizamos en rand*/
 public function tiraDado(){
 
-	$this->tirarDado=rand(0,12);	/*Establecemos aquí el RAND, y una vez generemos esta funcion mostrará un numero de 0 a 12*/
-	echo $this->tirarDado;			/*No era necesario en los setters, poner limites, ya que se pueden poner igualmente en el rand...*/
+	$this->tirarDado=rand($this->minNumDado,$this->maxNumDado);	/*Establecemos aquí el RAND, y una vez generemos esta funcion mostrará un numero de 0 a 12*/
+	echo $this->tirarDado;			
 }
 }
 
